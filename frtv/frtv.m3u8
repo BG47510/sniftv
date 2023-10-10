@@ -1,61 +1,61 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="" tvg-name="Franceinfo" group-title="Actualités", France Info
-simulcast-p.ftven.fr/simulcast/France_Info/hls_monde_frinfo/index.m3u8
+https://simulcast-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz02NjFjZDg3MDE4N2ViYTlmMjYzOTAyZDc2MTQ1YzkwMDE0Mzg1NTZmYWQ0NDM1MjVjNmI4ZmM4ZTRhM2E3YmEw/simulcast/France_Info/hls_monde_frinfo/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=e95b096e5452537a2e271b5e8b7421f071930c04d8ae12b251aa5711c32546a0
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Généraliste", France 2
-simulcast-p.ftven.fr/simulcast/France_2/hls_fr2/index.m3u8
+https://simulcast-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz02NjFjZDg3MDE4N2ViYTlmMjYzOTAyZDc2MTQ1YzkwMDE0Mzg1NTZmYWQ0NDM1MjVjNmI4ZmM4ZTRhM2E3YmEw/simulcast/France_2/hls_fr2/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=e95b096e5452537a2e271b5e8b7421f071930c04d8ae12b251aa5711c32546a0
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Généraliste", France 3
-simulcast-p.ftven.fr/simulcast/France_3/hls_fr3/index.m3u8
+https://simulcast-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz02NjFjZDg3MDE4N2ViYTlmMjYzOTAyZDc2MTQ1YzkwMDE0Mzg1NTZmYWQ0NDM1MjVjNmI4ZmM4ZTRhM2E3YmEw/simulcast/France_3/hls_fr3/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=e95b096e5452537a2e271b5e8b7421f071930c04d8ae12b251aa5711c32546a0
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Généraliste", France 4
-simulcast-p.ftven.fr/simulcast/France_4/hls_fr4/index.m3u8
+https://simulcast-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz02NjFjZDg3MDE4N2ViYTlmMjYzOTAyZDc2MTQ1YzkwMDE0Mzg1NTZmYWQ0NDM1MjVjNmI4ZmM4ZTRhM2E3YmEw/simulcast/France_4/hls_fr4/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=e95b096e5452537a2e271b5e8b7421f071930c04d8ae12b251aa5711c32546a0
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Généraliste", France 5
-simulcast-p.ftven.fr/simulcast/France_5/hls_fr5/index.m3u8
+https://simulcast-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz02NjFjZDg3MDE4N2ViYTlmMjYzOTAyZDc2MTQ1YzkwMDE0Mzg1NTZmYWQ0NDM1MjVjNmI4ZmM4ZTRhM2E3YmEw/simulcast/France_5/hls_fr5/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=e95b096e5452537a2e271b5e8b7421f071930c04d8ae12b251aa5711c32546a0
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", Regions_noa
-simulcast-p.ftven.fr/simulcast/Regions_noa/hls_noa/index.m3u8
+https://simulcast-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz02NjFjZDg3MDE4N2ViYTlmMjYzOTAyZDc2MTQ1YzkwMDE0Mzg1NTZmYWQ0NDM1MjVjNmI4ZmM4ZTRhM2E3YmEw/simulcast/Regions_noa/hls_noa/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=e95b096e5452537a2e271b5e8b7421f071930c04d8ae12b251aa5711c32546a0
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Paris_IDF
-live-regions-p.ftven.fr/hls/live/2037716/F3_Paris_IDF/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037716/F3_Paris_IDF/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Lorraine
-live-regions-p.ftven.fr/hls/live/2037713/F3_Lorraine/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037713/F3_Lorraine/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Champagne
-live-regions-p.ftven.fr/hls/live/2037707/F3_Champagne/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037707/F3_Champagne/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Alsace
-live-regions-p.ftven.fr/hls/live/2037598/F3_Alsace/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037598/F3_Alsace/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Nord_PDC
-live-regions-p.ftven.fr/hls/live/2037715/F3_Nord_PDC/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037715/F3_Nord_PDC/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Picardie
-live-regions-p.ftven.fr/hls/live/2037718/F3_Picardie/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037718/F3_Picardie/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_B_Normandie
-live-regions-p.ftven.fr/hls/live/2037703/F3_B_Normandie/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037703/F3_B_Normandie/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_H_Normandie
-live-regions-p.ftven.fr/hls/live/2037710/F3_H_Normandie/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037710/F3_H_Normandie/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Aquitaine
-live-regions-p.ftven.fr/hls/live/2037599/F3_Aquitaine/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037599/F3_Aquitaine/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Limousin
-live-regions-p.ftven.fr/hls/live/2037712/F3_Limousin/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037712/F3_Limousin/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_PoitouCharentes
-live-regions-p.ftven.fr/hls/live/2037719/F3_PoitouCharentes/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037719/F3_PoitouCharentes/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_MidiPyrenees
-live-regions-p.ftven.fr/hls/live/2037714/F3_MidiPyrenees/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037714/F3_MidiPyrenees/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Languedoc
-live-regions-p.ftven.fr/hls/live/2037711/F3_Languedoc/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037711/F3_Languedoc/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Pays_Loire
-live-regions-p.ftven.fr/hls/live/2037717/F3_Pays_Loire/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037717/F3_Pays_Loire/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_ProvenceAlpes
-live-regions-p.ftven.fr/hls/live/2037720/F3_ProvenceAlpes/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037720/F3_ProvenceAlpes/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Azur
-live-regions-p.ftven.fr/hls/live/2037702/F3_Azur/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037702/F3_Azur/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_RhoneAlpes
-live-regions-p.ftven.fr/hls/live/2037721/F3_RhoneAlpes/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037721/F3_RhoneAlpes/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Auvergne
-live-regions-p.ftven.fr/hls/live/2037600/F3_Auvergne/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037600/F3_Auvergne/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Alpes
-live-regions-p.ftven.fr/hls/live/2037536/F3_Alpes/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037536/F3_Alpes/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Bourgogne
-live-regions-p.ftven.fr/hls/live/2037704/F3_Bourgogne/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037704/F3_Bourgogne/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_FrancheComte
-live-regions-p.ftven.fr/hls/live/2037709/F3_FrancheComte/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037709/F3_FrancheComte/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Bretagne
-live-regions-p.ftven.fr/hls/live/2037705/F3_Bretagne/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037705/F3_Bretagne/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Centre
-live-regions-p.ftven.fr/hls/live/2037706/F3_Centre/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037706/F3_Centre/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
 #EXTINF:-1 tvg-id="" tvg-name="" group-title="Locale", F3_Corse
-live-regions-p.ftven.fr/hls/live/2037708/F3_Corse/index.m3u8
+https://live-regions-p.ftven.fr/ZXhwPTE2OTY5Nzk0NjZ+YWNsPSUyZip+aG1hYz1iMGZkMzYxZWRlOTQ2NjZjY2Y2NjgwMTMzMGUyOTAwNzRlN2Y1NGQyOTUyNTJjZDJkNjkwNTgzODlkYzc0MmVj/hls/live/2037708/F3_Corse/index.m3u8?hdnea=exp=1696958466~acl=%2f*~hmac=246a7198278b7cc279ef998849c2c193b5d119ff04aa34b29598c072afb7b55b
