@@ -2,8 +2,8 @@ name: frtv
 
 # Actualisation du flux á la 34ème minute toutes les 4 heures.
 on:
-  schedule:
-    - cron: '34 */4 * * *'
+ # schedule:
+   # - cron: '34 */4 * * *'
     
   workflow_dispatch:
 
