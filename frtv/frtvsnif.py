@@ -2,7 +2,8 @@
 # par github.com/BG47510/
 
 import requests
-import re
+from random import randint
+from time import sleep
 import sys
 import random
 
