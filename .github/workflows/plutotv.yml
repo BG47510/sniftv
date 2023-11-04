@@ -2,8 +2,8 @@ name: plutotv
 
 # Actualisation du flux chaque vendredi á 3 heures 44.
 on:
-  schedule:
-    - cron: '44 3 * * 5'
+ # schedule:
+  #  - cron: '44 3 * * 5'
     
   workflow_dispatch:
 
