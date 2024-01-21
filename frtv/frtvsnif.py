@@ -27,7 +27,7 @@ headers = {
 }
 
 
-erreur = 'https://raw.githubusercontent.com/BG47510/Zap/main/assets/error.m3u8'
+erreur = requests.get("https://raw.githubusercontent.com/BG47510/Zap/main/assets/error.m3u8").text
 
 def snif(line):
     domaine = "https://hdfauth.ftven.fr/esi/TA?url=https://"
