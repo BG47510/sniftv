@@ -1,0 +1,57 @@
+name: frtv
+
+# Actualisation du flux toutes les 5 heures à la 16ème minutes.
+on:
+  schedule:
+    - cron: '16 0/5 * * *'
+
+  # Permet d'exécuter ce flux de travail manuellement à partir de l'onglet Actions
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Un flux de travail se compose d'une ou plusieurs tâches qui peuvent être exécutées séquentiellement ou en parallèle
+jobs:
+  # Ce flux de travail contient une tâche appelée "build"
+  build:
+    # Le travail sera exécuté sur ubuntu-latest
+    runs-on: ubuntu-latest
+
+    # Steps représentent une séquence de tâches qui seront exécutées dans le cadre du travail
+    steps:
+      # Extrait votre référentiel sous $GITHUB_WORKSPACE, afin que votre travail puisse y accéder
+      - uses: actions/checkout@v3
+
+
+      # Pour pouvoir travailler sur un projet,
+      # Vous avez besoin d’un nom d’utilisateur et d’une adresse email associée valide. 
+      - name: config
+        run: |
+          git pull
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
+
+      - name: actualisation des flux
+        run: |
+          pwd
+          python3 py/frtv.py "http://s2.callofliberty.fr/direct/france.2/master.m3u8" > frtv/fr2.m3u8
+          sleep 15
+          python3 py/frtv.py "http://s2.callofliberty.fr/direct/france.3/master.m3u8" > frtv/fr3.m3u8
+          sleep 15
+          python3 py/frtv.py "http://s2.callofliberty.fr/direct/france.4/master.m3u8" > frtv/fr4.m3u8
+          sleep 15
+          python3 py/frtv.py "http://s2.callofliberty.fr/direct/france.5/master.m3u8" > frtv/fr5.m3u8
+          
+
+      # Informer Git que vous voulez inclure les mises à jour dans un fichier.
+      - name: git add
+        run: |
+          git add -A
+          ls -la
+
+      - name: commit & push
+        run: |
+          git commit -m "Actualisation des flux"
+          git push
