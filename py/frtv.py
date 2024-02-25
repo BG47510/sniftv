@@ -16,7 +16,8 @@ s = requests.session()
 def snif(url):
     try:
         source = s.get(url, headers=headers)
-        m3u8 = (source).text
+        flux = (source).text
+        m3u8 = flux.replace("http://s2.callofliberty.fr/HLS-AES/", "")
     except Exception as e:
         m3u8 = erreur
     finally:
