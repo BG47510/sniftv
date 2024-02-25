@@ -1,4 +1,4 @@
-name: frtv
+name: callo_frtv
 
 # Actualisation du flux toutes les 5 heures à la 16ème minutes.
 on:
