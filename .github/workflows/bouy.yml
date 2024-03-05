@@ -1,0 +1,54 @@
+name: bouy1
+
+# Actualisation du flux toutes les 4 heures à la 2ème minutes.
+on:
+  schedule:
+    - cron: '21 0/4 * * *'
+
+  # Permet d'exécuter ce flux de travail manuellement à partir de l'onglet Actions
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Un flux de travail se compose d'une ou plusieurs tâches qui peuvent être exécutées séquentiellement ou en parallèle
+jobs:
+  # Ce flux de travail contient une tâche appelée "build"
+  build:
+    # Le travail sera exécuté sur ubuntu-latest
+    runs-on: ubuntu-latest
+
+    # Steps représentent une séquence de tâches qui seront exécutées dans le cadre du travail
+    steps:
+      # Extrait votre référentiel sous $GITHUB_WORKSPACE, afin que votre travail puisse y accéder
+      - uses: actions/checkout@v3
+
+
+      # Pour pouvoir travailler sur un projet,
+      # Vous avez besoin d’un nom d’utilisateur et d’une adresse email associée valide. 
+      - name: config
+        run: |
+          git pull
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
+
+      - name: actualisation des flux
+        run: |
+          pwd
+          python3 py/bouy.py "https://mediainfo.tf1.fr/mediainfocombo/L_LCI" > bouy/li.m3u8
+          sleep 15
+          python3 py/bouy.py "https://mediainfo.tf1.fr/mediainfocombo/L_TF1" > bouy/t1.m3u8
+   
+          
+
+      # Informer Git que vous voulez inclure les mises à jour dans un fichier.
+      - name: git add
+        run: |
+          git add -A
+          ls -la
+
+      - name: commit & push
+        run: |
+          git commit -m "Actualisation des flux"
+          git push
