@@ -37,7 +37,7 @@ jobs:
         run: |
           pwd
           python3 py/bouy.py "https://mediainfo.tf1.fr/mediainfocombo/L_LCI" > bouy/li.m3u8
-          sleep 15
+          
           
    
           
