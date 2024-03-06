@@ -18,7 +18,7 @@ def snif(url):
         source = s.get(url, headers=headers)
         m3u8 = (source).text
     except Exception as e:
-        m3u8 = erreur
+        m3u8 = requests.get(erreur).text
     finally:
         print(m3u8)
 
