@@ -13,7 +13,7 @@ params = {
     "format": "hls",
 }
 
-erreur = requests.get("https://raw.githubusercontent.com/BG47510/Zap/main/assets/error.m3u8").text
+erreur = "https://github.com/BG47510/Zap/raw/main/assets/error.m3u8"
 s = requests.session()
 def snif(url):
     try:
