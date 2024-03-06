@@ -24,7 +24,7 @@ def snif(url):
         mu = lien.replace(".m3u8", "")
         m3u8 = flux.replace("index", (mu))
     except Exception as e:
-        m3u8 = erreur
+        m3u8 = requests.get(erreur).text
     finally:
         print(m3u8)
 clic = snif(sys.argv[1])
