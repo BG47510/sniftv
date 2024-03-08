@@ -13,7 +13,7 @@ headers = {
 erreur = "https://github.com/BG47510/Zap/raw/main/assets/error.m3u8"
 
 try:
-    pluto = "http://api.pluto.tv/v2/channels"
+    #pluto = "http://api.pluto.tv/v2/channels"
     api = requests.get(pluto, headers=headers).json()
 except:
     m3u8 = requests.get(erreur).text
