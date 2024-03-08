@@ -33,7 +33,7 @@ terminate=false&sid=WEB-45961ff4-d9cc-44b0-9a73-6e39ffde45ad\
               finally:
               	print(m3u8)
     except:
-        bug = requests.get(erreur).text
+        mu = requests.get(erreur).text
     finally:
-    	print(bug)
+    	print(mu)
 clic = snif(sys.argv[1])
