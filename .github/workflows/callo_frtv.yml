@@ -36,13 +36,13 @@ jobs:
       - name: actualisation des flux
         run: |
           pwd
-          python3 py/frtv.py "http://s2.callofliberty.fr/directlive/france.2/master.m3u8" > frtv/fr2.m3u8
+          python3 py/frtv.py "http://s2.callofliberty.fr/direct/france.2/master.m3u8" > frtv/fr2.m3u8
           sleep 15
-          python3 py/frtv.py "http://s2.callofliberty.fr/directlive/france.3/master.m3u8" > frtv/fr3.m3u8
+          python3 py/frtv.py "http://s2.callofliberty.fr/direct/france.3/master.m3u8" > frtv/fr3.m3u8
           sleep 15
-          python3 py/frtv.py "http://s2.callofliberty.fr/directlive/france.4/master.m3u8" > frtv/fr4.m3u8
+          python3 py/frtv.py "http://s2.callofliberty.fr/direct/france.4/master.m3u8" > frtv/fr4.m3u8
           sleep 15
-          python3 py/frtv.py "http://s2.callofliberty.fr/directlive/france.5/master.m3u8" > frtv/fr5.m3u8
+          python3 py/frtv.py "http://s2.callofliberty.fr/direct/france.5/master.m3u8" > frtv/fr5.m3u8
           
 
       # Informer Git que vous voulez inclure les mises à jour dans un fichier.
