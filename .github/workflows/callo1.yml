@@ -4,8 +4,7 @@ name: bouy
 on:
   #schedule:
    # - cron: '46 0/3 * * *'
-
-  # Permet d'exécuter ce flux de travail manuellement à partir de l'onglet Actions
+   # Permet d'exécuter ce flux de travail manuellement à partir de l'onglet Actions
   workflow_dispatch:
 
 permissions:
