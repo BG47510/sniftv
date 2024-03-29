@@ -2,8 +2,8 @@ name: callo_frtv
 
 # Actualisation du flux toutes les 5 heures à la 16ème minutes.
 on:
-  schedule:
-    - cron: '16 0/5 * * *'
+ # schedule:
+    #- cron: '16 0/5 * * *'
 
   # Permet d'exécuter ce flux de travail manuellement à partir de l'onglet Actions
   workflow_dispatch:
