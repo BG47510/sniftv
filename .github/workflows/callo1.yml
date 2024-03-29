@@ -3,7 +3,7 @@ name: bouy
 # Actualisation du flux toutes les 3 heures à la 46ème minutes.
 on:
   #schedule:
-   3 - cron: '46 0/3 * * *'
+   # - cron: '46 0/3 * * *'
 
   # Permet d'exécuter ce flux de travail manuellement à partir de l'onglet Actions
   workflow_dispatch:
