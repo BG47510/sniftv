@@ -2,8 +2,8 @@ name: France tvn
 
 # Actualisation du flux toutes les 4 heures à la 46ème minutes.
 on:
-  #schedule:
-   # - cron: '46 0/4 * * *'
+  schedule:
+    - cron: '46 0/4 * * *'
    # Permet d'exécuter ce flux de travail manuellement à partir de l'onglet Actions
   workflow_dispatch:
 
@@ -43,7 +43,7 @@ jobs:
           sleep 15
           python3 py/frtvn.py "https://simulcast-p.ftven.fr/simulcast/France_5/hls_fr5/index.m3u8" > frtv/fr5.m3u8
           sleep 20
-          python3 py/frtvn.py "https://simulcast-p.ftven.fr/simulcast/France_Info/hls_monde_frinfo/index.m3u8" > frtv/fr3.m3u8
+          python3 py/frtvn.py "https://simulcast-p.ftven.fr/simulcast/France_Info/hls_monde_frinfo/index.m3u8" > frtv/fri.m3u8
           
 
       # Informer Git que vous voulez inclure les mises à jour dans un fichier.
