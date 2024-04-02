@@ -1,33 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr-FR">
-    <head>
-        <title>CallOfLiberty</title>
-        <meta charset="UTF-8">
-        <meta name="robots" content="noindex">
-        <meta name="robots" content="noarchive">
-        <meta name="robots" content="nosnippet">
-        <meta name="robots" content="noodp">
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-        <link rel="stylesheet" href="/style.css">
-    </head>
-    <body>
-        <table>
-            <tr>
-                <td>
-                    <img alt="CallOfliberty" src="/CallOfLiberty.png">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input style="font-size:30px;color:orange" type=button value="Accueil" onclick="javascript:location.href='/'">
-               </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                    <img alt="404" src="/404.jpg">
-               </td>
-            </tr>
-        </table>
-    </body>
-</html>
+<HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;simulcast&#45;p&#46;ftven&#46;fr&#47;ZXhwPTE3MTIwODcyMjB&#43;YWNsPSUyZip&#43;aG1hYz0zOTRlMjhlMTE1MzA2NTFhODk5MDBjZTIzZmJmODY4Y2VkNWY3YWFkNzM4ZWMyYzVlOGRmZDM5YjFkYWQ5NGFm&#47;simulcast&#47;https://simulcast-p.ftven.fr/ZXhwPTE3MTIwODcyMjB+YWNsPSUyZip+aG1hYz0zOTRlMjhlMTE1MzA2NTFhODk5MDBjZTIzZmJmODY4Y2VkNWY3YWFkNzM4ZWMyYzVlOGRmZDM5YjFkYWQ5NGFm/simulcast/France_5/hls_fr5/France&#95;5&#47;hls&#95;fr5&#47;index&#46;m3u8&#63;" on this server.<P>
+Reference&#32;&#35;18&#46;d5b52d17&#46;1712065620&#46;5b8168b
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d5b52d17&#46;1712065620&#46;5b8168b</P>
+</BODY>
+</HTML>
+
