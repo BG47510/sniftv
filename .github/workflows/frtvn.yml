@@ -2,8 +2,8 @@ name: France tvn
 
 # Actualisation du flux toutes les 4 heures à la 46ème minutes.
 on:
-  schedule:
-    - cron: '46 0/4 * * *'
+ # schedule:
+  #  - cron: '46 0/4 * * *'
    # Permet d'exécuter ce flux de travail manuellement à partir de l'onglet Actions
   workflow_dispatch:
 
