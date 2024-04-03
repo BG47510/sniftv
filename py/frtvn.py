@@ -6,7 +6,7 @@ import re
 
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0",
-    "authority": "https://www.france.tv/",
+    "referer": "https://www.france.tv/",
 }
 
 erreur = requests.get("https://raw.githubusercontent.com/BG47510/Zap/main/assets/error.m3u8").text
