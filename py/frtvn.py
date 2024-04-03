@@ -15,8 +15,8 @@ s = requests.session()
 def snif(url):
     try:
         token = "https://hdfauth.ftven.fr/esi/TA?url="
-        source = s.get(token + url, headers=headers).text
-        base = s.get(source, headers=headers).text
+        source = s.get(token + url).text
+        base = s.get(source).text
         pat = re.compile("index[^\n\r]*")
         res = re.sub(pat,"",source)
         m3u8 = base.replace("France", (res + "France"))
