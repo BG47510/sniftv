@@ -1,11 +1,5 @@
-<HTML><HEAD>
-<TITLE>Access Denied</TITLE>
-</HEAD><BODY>
-<H1>Access Denied</H1>
- 
-You don't have permission to access "http&#58;&#47;&#47;simulcast&#45;p&#46;ftven&#46;fr&#47;ZXhwPTE3MTIxODQ4ODV&#43;YWNsPSUyZip&#43;aG1hYz1lM2E3NjlmOWYxZTE4MDAxNWNhY2U2NTI4NTMwODM1ZDRkMjYyMGZkYWZiY2E0YTE0NzVlZjJjNjUzYzFjYTJi&#47;simulcast&#47;https://simulcast-p.ftven.fr/ZXhwPTE3MTIxODQ4ODV+YWNsPSUyZip+aG1hYz1lM2E3NjlmOWYxZTE4MDAxNWNhY2U2NTI4NTMwODM1ZDRkMjYyMGZkYWZiY2E0YTE0NzVlZjJjNjUzYzFjYTJi/simulcast/France_2/hls_fr2/France&#95;2&#47;hls&#95;fr2&#47;index&#46;m3u8&#63;" on this server.<P>
-Reference&#32;&#35;18&#46;2cc7cf17&#46;1712163285&#46;737bbdc
-<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;2cc7cf17&#46;1712163285&#46;737bbdc</P>
-</BODY>
-</HTML>
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
 
+https://raw.githubusercontent.com/BG47510/Zap/main/assets/error.m3u8
