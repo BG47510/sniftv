@@ -1,0 +1,54 @@
+name: tnt
+
+on:
+  #schedule:
+    #- cron: '18 */4 * * *'  # Actualise toutes les 3 heures
+  workflow_dispatch:       # Permet le déclenchement manuel
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Référentiel d’extraction
+        uses: actions/checkout@v4
+
+      - name: Créer un dossier a01
+        run: mkdir -p a01
+
+      - name: Récupère le flux de frinfo
+        run: |
+          source=$(curl -s -H "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Mobile/15E148 Safari/604.1" https://hdfauth.ftven.fr/esi/TA?url=https://simulcast-p.ftven.fr/simulcast/France_Info/hls_monde_frinfo/index.m3u8)
+          base=$(curl -e "https://www.france.tv/" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" "$source")
+          mu=$(echo $source | grep -oP "[^\n\r]*index")
+          echo "$base" > fr/frinfo.m3u8 | sed -i -e "s|France|$mu|g" -e "s|index|France|g" fr/frinfo.m3u8
+
+      - name: Récupère le flux de lCI
+        run: |
+          base=$(curl -s -H "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Mobile/15E148 Safari/604.1" https://mediainfo.tf1.fr/mediainfocombo/L_LCI?format=hls | jq --raw-output '.delivery.url')
+          # jq -r signifie jq --raw-output retire les guillemets de chaîne.
+          flux=$(curl -e "https://www.tf1.fr" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" $base)
+          # s veut dire remplacer. Le flag g, optionnel, veut dire partout. 
+          # Vous devez échapper les caractères spéciaux avec \.
+          mu=$(echo $base | sed "s/.m3u8//g")
+          # Si vous avez une barre oblique / dans la variable utiliser | comme séparateur.
+          # L’option pour mettre à jour le fichier est -i.
+          echo "$flux" > fr/lci.m3u8 | sed -i "s|index|$mu|g" a01/lci.m3u8
+
+        - name: Vérifier l'adresse IP de github
+        run: |
+          github_ip=$(curl https://api.ipify.org)
+          echo "L'adresse IP de github est: $github_ip" > githubip.data        
+
+
+      - name: Extraire les modifications de la télécommande
+        run: git pull origin main          
+
+      - name: Valider et envoyer les modifications
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add -A
+          ls -la 
+          git commit -m "Dernière actualisation"
+          git push
