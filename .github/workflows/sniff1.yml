@@ -1,8 +1,8 @@
-name: tnt
+name: info
 
 on:
   #schedule:
-    #- cron: '18 */4 * * *'  # Actualise toutes les 3 heures
+    #- cron: '18 */4 * * *'  # Actualise toutes les 4 heures
   workflow_dispatch:       # Permet le déclenchement manuel
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
           source=$(curl -s -H "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Mobile/15E148 Safari/604.1" https://hdfauth.ftven.fr/esi/TA?url=https://simulcast-p.ftven.fr/simulcast/France_Info/hls_monde_frinfo/index.m3u8)
           base=$(curl -e "https://www.france.tv/" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" "$source")
           mu=$(echo $source | grep -oP "[^\n\r]*index")
-          echo "$base" > fr/frinfo.m3u8 | sed -i -e "s|France|$mu|g" -e "s|index|France|g" fr/frinfo.m3u8
+          echo "$base" > a01/frinfo.m3u8 | sed -i -e "s|France|$mu|g" -e "s|index|France|g" a01/frinfo.m3u8
 
       - name: Récupère le flux de lCI
         run: |
