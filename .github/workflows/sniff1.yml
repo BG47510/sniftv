@@ -12,13 +12,6 @@ jobs:
     steps:
       - name: Référentiel d’extraction
         uses: actions/checkout@v4
-        
-      - name: config
-        # Pour pouvoir travailler sur un projet,
-      # vous avez besoin d’un nom d’utilisateur et d’une adresse email associée valide. 
-        run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
           
       - name: Créer un dossier a01
         run: mkdir -p a01
@@ -51,13 +44,11 @@ jobs:
       - name: Extraire les modifications de la télécommande
         run: git pull origin main          
 
-      - name: git add
-      # Informer Git que vous voulez inclure les mises à jour dans un fichier.
+      - name: Valider et envoyer les modifications
         run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
           git add -A
           ls -la 
-          
-      - name: commit & push
-        run: |
-          git commit -am "Dernière actualisation"
+          git commit -m "Dernière actualisation"
           git push
