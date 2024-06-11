@@ -44,11 +44,13 @@ jobs:
       - name: Extraire les modifications de la télécommande
         run: git pull origin main          
 
-      - name: Valider et envoyer les modifications
+      - name: git add
+      # Informer Git que vous voulez inclure les mises à jour dans un fichier.
         run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
           git add -A
           ls -la 
-          git commit -m "Dernière actualisation"
+          
+      - name: commit & push
+        run: |
+          git commit -am "Dernière actualisation"
           git push
