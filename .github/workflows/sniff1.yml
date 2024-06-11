@@ -12,7 +12,14 @@ jobs:
     steps:
       - name: Référentiel d’extraction
         uses: actions/checkout@v4
-
+        
+      - name: config
+        # Pour pouvoir travailler sur un projet,
+      # vous avez besoin d’un nom d’utilisateur et d’une adresse email associée valide. 
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          
       - name: Créer un dossier a01
         run: mkdir -p a01
 
