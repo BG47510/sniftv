@@ -30,12 +30,16 @@ jobs:
           sed "s/France_Info\/hls_monde_frinfo\/France_Info/France_4\/hls_fr4\/France_4/g" a02/frinfo.m3u8 > a02/fr4.m3u8
           sed "s/France_Info\/hls_monde_frinfo\/France_Info/France_5\/hls_fr5\/France_5/g" a02/frinfo.m3u8 > a02/fr5.m3u8
           
+      - name: Construit les flux régionaux de FranceTV
+        run: |
+          sed "s/France_Info\/hls_monde_frinfo\/France_Info/Regions_noa\/hls_noa\/Regions_noa/g" a02/frinfo.m3u8 > a02/frnoa.m3u8
+          
       - name: Vérifie l'adresse IP de github
         run: |
           github_ip=$(curl https://api.ipify.org)
           echo "L'adresse IP de github est: $github_ip" > githubip.data        
 
-      - name: Valider et envoyer les modifications
+      - name: Valide et transmet les modifications
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
