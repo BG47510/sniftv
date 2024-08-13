@@ -1,8 +1,8 @@
 name: sniff1 a01
 
 on:
-  schedule:
-    - cron: '18 */4 * * *'  # Actualise toutes les 4 heures
+  #schedule:
+    #- cron: '18 */4 * * *'  # Actualise toutes les 4 heures
   workflow_dispatch:       # Permet le déclenchement manuel
 
 jobs:
