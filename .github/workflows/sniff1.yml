@@ -18,7 +18,7 @@ jobs:
 
       - name: Récupère le flux de lCI
         run: |
-          base=$(curl -s -H "User-Agent: Mozilla/5.0 (iPad; U; CPU OS 4_3_5 like Mac OS X; fr-fr) AppleWebKit/533.17.9 (KHTML, like Gecko) Mobile/8L1" https://mediainfo.tf1.fr/mediainfocombo/L_LCI?format=hls&context=ONEINFO | jq -r '.delivery.url')
+          base=$(curl -s -H "User-Agent: Mozilla/5.0 (iPad; U; CPU OS 4_3_5 like Mac OS X; fr-fr) AppleWebKit/533.17.9 (KHTML, like Gecko) Mobile/8L1" https://mediainfo.tf1.fr/mediainfocombo/L_LCI?format=hls&context=ONEINFO | jq --raw-output '.delivery.url')
           # jq -r signifie jq --raw-output retire les guillemets de chaîne.
           flux=$(curl -e "https://www.tf1.fr" -A "Mozilla/5.0 (iPad; U; CPU OS 4_3_5 like Mac OS X; fr-fr) AppleWebKit/533.17.9 (KHTML, like Gecko) Mobile/8L1" $base)
           # s veut dire remplacer. Le flag g, optionnel, veut dire partout. 
