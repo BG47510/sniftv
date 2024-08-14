@@ -20,7 +20,7 @@ jobs:
         run: |
           base=$(curl -s -H "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Mobile/15E148 Safari/604.1" https://mediainfo.tf1.fr/mediainfocombo/L_LCI?format=hls&context=ONEINFO | jq '.')
           # jq -r signifie jq --raw-output retire les guillemets de chaîne.
-          echo "$base" > lci.m3u8
+          echo "$base" > a01/lci.m3u8
           #base=$(curl -s -H "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Mobile/15E148 Safari/604.1" https://mediainfo.tf1.fr/mediainfocombo/L_LCI?format=hls&context=ONEINFO | jq --raw-output '.delivery.url')
           # jq -r signifie jq --raw-output retire les guillemets de chaîne.
           #flux=$(curl -e "https://www.tf1.fr" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" $base)
