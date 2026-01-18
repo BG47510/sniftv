@@ -1,4 +1,4 @@
-name: sniff2 a02
+name: fr2 a02
 
 on:
   schedule:
@@ -13,10 +13,10 @@ jobs:
       - name: Référentiel d’extraction
         uses: actions/checkout@v4
 
-      - name: Créer un dossier a02
-        run: mkdir -p a02
+     # - name: Créer un dossier a02
+     #   run: mkdir -p a02
 
-      - name: Récupère le flux de frinfo
+      - name: Récupère le flux de fr2
         run: |
           source=$(curl -s -H "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Mobile/15E148 Safari/604.1" https://hdfauth.ftven.fr/esi/TA?url=https://simulcast-p.ftven.fr/simulcast/France_2/hls_fr2/index.m3u8)
           base=$(curl -e "https://www.france.tv/" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" "$source")
