@@ -29,7 +29,7 @@ jobs:
 
       - name: Récupère le flux de lCI
         run: |
-          base=$(curl -k -s -H "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Mobile/15E148 Safari/604.1" https://mediainfo.tf1.fr/mediainfocombo/L_LCI?format=hls&context=ONEINFO | grep -oP "(https?:\/\/live)(.*m3u8)")
+          base=$(curl -k -s -H "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Mobile/15E148 Safari/604.1" https://mediainfo.tf1.fr/mediainfocombo/L_LCI?format=hls&context=ONEINFO | grep -oE "https?:\/\/live.*\.m3u8"
           #flux=$(curl -k -e "https://www.tf1.fr" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" -H "Origin: https://www.tf1.fr" $base)
           echo "$base" > fr/vidlci.m3u8 
 
