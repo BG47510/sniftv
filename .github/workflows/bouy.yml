@@ -1,16 +1,10 @@
-name: lci
-#https://github.com/mikekaprielian/rtnaodhor93n398
-# https://regex101.com/
-
-# (https?:\/\/live)(.*m3u8)
-
-# L’outil curl permet aussi de fixer un serveur proxy par lequel obligatoirement passer pour tout chargement. L’option à utiliser est "–x" :
+name: test
 
 # curl –x proxy.mydmn.org:3128 http://www.mydmn.org/
 
 on:
   schedule:
-    - cron: '0 */3 * * *'  # S'exécute toutes les 3 heures
+    #- cron: '0 */3 * * *'  # S'exécute toutes les 3 heures
   workflow_dispatch:      # Permet le déclenchement manuel
 
 jobs:
