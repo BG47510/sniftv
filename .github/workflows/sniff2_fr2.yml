@@ -2,9 +2,8 @@ name: Fr2 m3u8
 
 on:
   schedule:
-    # S'exécute toutes les 4 heures (ajustable)
-    - cron: '38 */5 * * *'
-  workflow_dispatch: # Permet de lancer le script manuellement depuis l'onglet Actions
+    - cron: '38 */5 * * *'  # S'exécute toutes les 5 heures
+  workflow_dispatch:  # Permet de lancer le script manuellement depuis l'onglet Actions
 
 jobs:
   build:
@@ -28,6 +27,7 @@ jobs:
       run: |
         python ${GITHUB_WORKSPACE}/a02/script_fr2.py
 
-    - uses: stefanzweifel/git-auto-commit-action@v5 # Valide et renvoie automatiquement tous les fichiers créés ou modifiés à votre dépôt.
+    - name: Git Auto Commit
+      uses: stefanzweifel/git-auto-commit-action@v5  # Valide et renvoie automatiquement tous les fichiers créés ou modifiés à votre dépôt.
       with:
-       commit_message: 'Actualisation'
+        commit_message: 'Actualisation'  # Message de commit
