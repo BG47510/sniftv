@@ -1,0 +1,33 @@
+name: Fr2 m3u8
+
+on:
+  schedule:
+    # S'exécute toutes les 3 heures (ajustable)
+    - cron: '0 */3 * * *'
+  workflow_dispatch: # Permet de lancer le script manuellement depuis l'onglet Actions
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Utilisation d'une image Ubuntu
+
+    steps:
+    - name: Vérifier le code source
+      uses: actions/checkout@v5
+
+    - name: Configurer Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.8'  # Version de Python à utiliser
+
+    - name: Installer les dépendances
+      run: |
+        pip install requests  # Installer requests
+        # Ajouter d'autres dépendances si nécessaire
+
+    - name: Exécuter le script
+      run: |
+        python ${GITHUB_WORKSPACE}/a02/script_fr2.py
+
+    - uses: stefanzweifel/git-auto-commit-action@v5 # Valide et renvoie automatiquement tous les fichiers créés ou modifiés à votre dépôt.
+      with:
+       commit_message: 'Actualisation'
