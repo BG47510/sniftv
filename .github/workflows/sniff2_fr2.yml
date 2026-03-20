@@ -2,8 +2,8 @@ name: Fr2 m3u8
 
 on:
   schedule:
-    # S'exécute toutes les 3 heures (ajustable)
-    - cron: '0 */3 * * *'
+    # S'exécute toutes les 4 heures (ajustable)
+    - cron: '38 */5 * * *'
   workflow_dispatch: # Permet de lancer le script manuellement depuis l'onglet Actions
 
 jobs:
