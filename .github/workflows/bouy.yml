@@ -3,7 +3,7 @@ name: test
 # curl –x proxy.mydmn.org:3128 http://www.mydmn.org/
 
 on:
-  schedule:
+  #schedule:
     #- cron: '0 */3 * * *'  # S'exécute toutes les 3 heures
   workflow_dispatch:      # Permet le déclenchement manuel
 
