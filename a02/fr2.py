@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 
 # Config — modifier si besoin
-auth_url = "https://hdfauth.ftven.fr/esi/TA?format=json&url=https://simulcast-p.ftven.fr/simulcast/France_2/hls_fr2/index.m3u"
+auth_url = "https://hdfauth.ftven.fr/esi/TA?format=json&url=https://simulcast-p.ftven.fr/simulcast/France_2/hls_fr2/index.m3u8"
 m3u8_path = Path("a02/fr2.m3u8")   # fichier m3u8 local à modifier
 backup_path = m3u8_path.with_suffix(".m3u8.bak")
 
