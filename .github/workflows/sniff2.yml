@@ -13,42 +13,28 @@ jobs:
       - name: Référentiel d’extraction
         uses: actions/checkout@v4
 
-      - name: Créer un dossier a02
-        run: mkdir -p a02
+      #- name: Créer un dossier a02
+       # run: mkdir -p a02
 
       - name: Récupère le flux de frinfo
         run: |
           set -euo pipefail
           source=$(curl -s -H "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Mobile/15E148 Safari/604.1" "https://hdfauth.ftven.fr/esi/TA?url=https://simulcast-p.ftven.fr/simulcast/France_Info/hls_monde_frinfo/index.m3u8")
           base=$(curl -s -e "https://www.france.tv/" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" "$source")
+          mu=$(echo "$source" | grep -oP "[^\n\r]*index")
           echo "$base" > a02/frinfo.m3u8
-          # extraire le préfixe signé commun (jusqu'à /simulcast)
-          prefix=$(grep -oP 'https://[^"]+(?=/simulcast/)' a02/frinfo.m3u8 | head -n1)
-          # fallback si grep ne trouve rien
-          if [ -z "$prefix" ]; then
-            prefix=$(echo "$source" | sed -n 's|\(https://[^/]\+/[^/]\+/[^/]\+\)/simulcast/.*|\1|p')
-          fi
-          # applique corrections locales si nécessaire (optionnel)
-          sed -i -e '4d' a02/frinfo.m3u8 || true
+          sed -i -e "s|France|$mu|g" -e "s|index|France|g" -e '4d' a02/frinfo.m3u8
 
-      - name: Construit les flux nationaux de FranceTV (préfixe signé réutilisé)
+      - name: Construit les flux nationaux de FranceTV
         run: |
-          set -euo pipefail
-          prefix=$(grep -oP 'https://[^"]+(?=/simulcast/)' a02/frinfo.m3u8 | head -n1)
-          if [ -z "$prefix" ]; then
-            echo "Préfixe signé introuvable, arrêt."
-            exit 1
-          fi
-          sed "s|https://[^/]\+/[^/]\+/[^/]\+/simulcast/France_Info/hls_monde_frinfo/France_Info|${prefix}/simulcast/France_2/hls_fr2/France_2|g" a02/frinfo.m3u8 > a02/fr2.m3u8
-          sed "s|https://[^/]\+/[^/]\+/[^/]\+/simulcast/France_Info/hls_monde_frinfo/France_Info|${prefix}/simulcast/France_3/hls_fr3/France_3|g" a02/frinfo.m3u8 > a02/fr3.m3u8
-          sed "s|https://[^/]\+/[^/]\+/[^/]\+/simulcast/France_Info/hls_monde_frinfo/France_Info|${prefix}/simulcast/France_4/hls_fr4/France_4|g" a02/frinfo.m3u8 > a02/fr4.m3u8
-          sed "s|https://[^/]\+/[^/]\+/[^/]\+/simulcast/France_Info/hls_monde_frinfo/France_Info|${prefix}/simulcast/France_5/hls_fr5/France_5|g" a02/frinfo.m3u8 > a02/fr5.m3u8
+          sed "s|France_Info/hls_monde_frinfo/France_Info|France_2/hls_fr2/France_2|g" a02/frinfo.m3u8 > a02/fr2.m3u8
+          sed "s|France_Info/hls_monde_frinfo/France_Info|France_3/hls_fr3/France_3|g" a02/frinfo.m3u8 > a02/fr3.m3u8
+          sed "s|France_Info/hls_monde_frinfo/France_Info|France_4/hls_fr4/France_4|g" a02/frinfo.m3u8 > a02/fr4.m3u8
+          sed "s|France_Info/hls_monde_frinfo/France_Info|France_5/hls_fr5/France_5|g" a02/frinfo.m3u8 > a02/fr5.m3u8
 
-      - name: Construit les flux régionaux de FranceTV (préfixe signé réutilisé)
+      - name: Construit les flux régionaux de FranceTV
         run: |
-          set -euo pipefail
-          prefix=$(grep -oP 'https://[^"]+(?=/simulcast/)' a02/frinfo.m3u8 | head -n1)
-          sed "s|https://[^/]\+/[^/]\+/[^/]\+/simulcast/France_Info/hls_monde_frinfo/France_Info|${prefix}/simulcast/Regions_noa/hls_noa/Regions_noa|g" a02/frinfo.m3u8 > a02/frnoa.m3u8
+          sed "s|France_Info/hls_monde_frinfo/France_Info|Regions_noa/hls_noa/Regions_noa|g" a02/frinfo.m3u8 > a02/frnoa.m3u8
 
       - name: Vérifie l'adresse IP du runner
         run: |
