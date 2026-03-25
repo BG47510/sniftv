@@ -4,7 +4,7 @@ from pathlib import Path
 
 # Config
 auth_url = "https://hdfauth.ftven.fr/esi/TA?url=https://live-sport-p.ftven.fr/simulcast/Sports/FRANCE/_TV/_INDEX.m3u8"
-m3u8_path = Path("a02/frsports.m3u8")
+m3u8_path = Path("a02/frsport.m3u8")
 
 def extract_token(text):
     """Extrait le token (suite sans slash) situé avant /dai/ ou /simulcast/."""
