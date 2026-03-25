@@ -4,11 +4,11 @@ from pathlib import Path
 
 # Config
 auth_url = "https://hdfauth.ftven.fr/esi/TA?url=https://live-series.ftven.fr/hls-francedomtom/index.m3u8"
-m3u8_path = Path("a02/frseries.m3u8")
+m3u8_path = Path("a02/frsport.m3u8")
+bak_path = Path("a02/bak/frseries.bak")
 
 def extract_token(text):
     """Extrait le token (suite sans slash) situé avant /dai/, /simulcast/ ou /hls-francedomtom/."""
-    # On cherche le pattern pour dai, simulcast ou hls-francedomtom
     match = re.search(r'/([^/]+)/(?:dai|simulcast|hls-francedomtom)/', text)
     return match.group(1) if match else None
 
@@ -52,7 +52,8 @@ try:
         print(f"✅ Le token est déjà à jour ({new_token}).")
     else:
         # 3) Mise à jour : sauvegarde puis remplacement ciblé
-        m3u8_path.with_suffix(".m3u8.bak").write_text(text, encoding="utf-8")
+        bak_path.parent.mkdir(parents=True, exist_ok=True)
+        bak_path.write_text(text, encoding="utf-8")
 
         # Remplacer uniquement le segment /<token>/(dai|simulcast|hls-francedomtom)/
         if old_token:
