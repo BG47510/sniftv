@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 
 # Config
-auth_url = "https://hdfauth.ftven.fr/esi/TA?url=https://simulcast-fr3regions-p.ftven.fr/simulcast/Regions_noa/hls_noa/master.m3u8"
+auth_url = "https://hdfauth.ftven.fr/esi/TA?url=https://simulcast-p.ftven.fr/simulcast/1er_Guadeloupe/hls_monde_1er_Gua/index.m3u8"
 m3u8_path = Path("a02/frnoa.m3u8")
 
 def extract_token(text):
