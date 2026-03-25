@@ -6,71 +6,77 @@ from pathlib import Path
 auth_url = "https://hdfauth.ftven.fr/esi/TA?url=https://live-series.ftven.fr/hls-francedomtom/index.m3u8"
 m3u8_path = Path("a02/frsport.m3u8")
 bak_path = Path("a02/bak/frseries.bak")
+TIMEOUT = 10
 
-def extract_token(text):
-    """Extrait le token (suite sans slash) situé avant /dai/, /simulcast/ ou /hls-francedomtom/."""
-    match = re.search(r'/([^/]+)/(?:dai|simulcast|hls-francedomtom)/', text)
-    return match.group(1) if match else None
+TOKEN_REGEX = re.compile(r'/([^/]+)/(?:dai|simulcast|hls-francedomtom)/')
 
-try:
-    # 1) Récupération du nouveau token via l'API
-    resp = requests.get(auth_url, timeout=10)
-    resp.raise_for_status()
+def extract_token_from_text(text: str):
+    m = TOKEN_REGEX.search(text)
+    return m.group(1) if m else None
 
-    # Tenter JSON d'abord, sinon texte brut
-    full_url = ""
+def replace_token_in_text(text: str, old_token: str | None, new_token: str):
+    if old_token:
+        pattern = re.compile(rf'/{re.escape(old_token)}/(dai|simulcast|hls-francedomtom)/')
+    else:
+        # If no old token discovered, replace any matching segment so we still insert the new token
+        pattern = re.compile(r'/([^/]+)/(dai|simulcast|hls-francedomtom)/')
+    new = pattern.sub(fr'/{new_token}/\1/', text)
+    return new
+
+def get_url_from_response(resp: requests.Response) -> str:
+    # Try JSON first, but fall back to raw text safely
     ct = resp.headers.get("Content-Type", "")
+    body = resp.text.strip()
     if "application/json" in ct:
         try:
-            full_url = resp.json().get("url", "") or ""
+            j = resp.json()
+            # Common keys that might hold the URL
+            for key in ("url", "uri", "data", "location"):
+                if isinstance(j, dict) and key in j and isinstance(j[key], str) and j[key].strip():
+                    return j[key].strip()
         except ValueError:
-            full_url = resp.text.strip()
-    else:
-        try:
-            full_url = resp.json().get("url", "") or ""
-        except Exception:
-            full_url = resp.text.strip()
+            pass
+    # Fallback: try to find an URL-like substring in the text body
+    # simple heuristic: look for https?://... containing one of the markers
+    m = re.search(r'https?://\S+(?:dai|simulcast|hls-francedomtom)\S*', body)
+    return m.group(0) if m else body
 
-    if not full_url or not any(k in full_url for k in ("dai", "simulcast", "hls-francedomtom")):
-        raise ValueError("Réponse API inattendue : URL manquante ou incorrecte.")
+def main():
+    try:
+        resp = requests.get(auth_url, timeout=TIMEOUT)
+        resp.raise_for_status()
+        full_url = get_url_from_response(resp)
+        if not full_url or not any(k in full_url for k in ("dai", "simulcast", "hls-francedomtom")):
+            raise ValueError("Réponse API inattendue : URL manquante ou ne contenant pas les segments attendus.")
+        new_token = extract_token_from_text(full_url)
+        if not new_token:
+            raise ValueError("Impossible d'extraire le nouveau token depuis l'URL renvoyée par l'API.")
 
-    new_token = extract_token(full_url)
-    if not new_token:
-        raise ValueError("Impossible d'extraire le nouveau token depuis l'API.")
+        if not m3u8_path.exists():
+            raise FileNotFoundError(f"Fichier introuvable : {m3u8_path}")
 
-    # 2) Lecture du fichier local
-    if not m3u8_path.exists():
-        raise FileNotFoundError(f"Le fichier {m3u8_path} est introuvable.")
+        text = m3u8_path.read_text(encoding="utf-8")
+        old_token = extract_token_from_text(text)
 
-    text = m3u8_path.read_text(encoding="utf-8")
-    old_token = extract_token(text)
+        if old_token == new_token:
+            print(f"✅ Le token est déjà à jour ({new_token}).")
+            return
 
-    if not old_token:
-        print("⚠️ Aucun ancien token détecté dans le fichier m3u8.")
-
-    if old_token == new_token:
-        print(f"✅ Le token est déjà à jour ({new_token}).")
-    else:
-        # 3) Mise à jour : sauvegarde puis remplacement ciblé
+        # Backup
         bak_path.parent.mkdir(parents=True, exist_ok=True)
         bak_path.write_text(text, encoding="utf-8")
 
-        # Remplacer uniquement le segment /<token>/(dai|simulcast|hls-francedomtom)/
-        if old_token:
-            updated = re.sub(
-                rf'/{re.escape(old_token)}/(dai|simulcast|hls-francedomtom)/',
-                f'/{new_token}/\\1/',
-                text
-            )
-        else:
-            updated = re.sub(
-                r'/[^/]+/(dai|simulcast|hls-francedomtom)/',
-                f'/{new_token}/\\1/',
-                text
-            )
+        updated = replace_token_in_text(text, old_token, new_token)
+
+        if updated == text:
+            # Nothing changed — give a diagnostic
+            raise RuntimeError("Aucune modification appliquée au fichier : motif non trouvé pour remplacement.")
 
         m3u8_path.write_text(updated, encoding="utf-8")
-        print(f"🚀 Mise à jour réussie : {old_token} -> {new_token}")
+        print(f"🚀 Mise à jour réussie : {old_token or '<inconnu>'} -> {new_token}")
 
-except Exception as e:
-    print(f"❌ Erreur : {e}")
+    except Exception as e:
+        print(f"❌ Erreur : {e}")
+
+if __name__ == "__main__":
+    main()
