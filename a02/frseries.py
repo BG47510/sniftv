@@ -4,7 +4,7 @@ from pathlib import Path
 
 # Config
 auth_url = "https://hdfauth.ftven.fr/esi/TA?url=https://live-series.ftven.fr/hls-francedomtom/index.m3u8"
-m3u8_path = Path("a02/frsport.m3u8")
+m3u8_path = Path("a02/frseries.m3u8")
 bak_path = Path("a02/bak/frseries.bak")
 TIMEOUT = 10
 
