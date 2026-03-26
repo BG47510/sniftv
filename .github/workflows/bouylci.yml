@@ -25,7 +25,7 @@ jobs:
 
     - name: Exécuter le script
       run: |
-        python ${GITHUB_WORKSPACE}/a01/bouylci.py
+        python ${GITHUB_WORKSPACE}/a01/bouy.py
 
     - name: Git Auto Commit
       uses: stefanzweifel/git-auto-commit-action@v5  # Valide et renvoie automatiquement tous les fichiers créés ou modifiés à votre dépôt.
