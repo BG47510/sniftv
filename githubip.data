@@ -1,1 +1,3 @@
 La géolocalisation de github est: {"reponse":{"geo_info":{"ip":"52.237.143.51","country_code":"US","city":"CHICAGO","timezone":"CST","continent":"NA","bw":"5000","generate-date":"1774608657"}}}
+2026-03-27T11:05:37UTC geo-info: {"reponse":{"geo_info":{"ip":"20.171.51.219","country_code":"US","city":"PHOENIX","timezone":"MST","continent":"NA","bw":"5000","generate-date":"1774609537"}}}
+2026-03-27T11:05:37UTC ipify: 20.171.51.219
