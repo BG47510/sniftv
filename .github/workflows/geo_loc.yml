@@ -1,9 +1,7 @@
 name: ip github
 
 on:
-  #schedule:
-    #- cron: '18 */4 * * *'  # Actualise toutes les 4 heures
-  workflow_dispatch:       # Permet le déclenchement manuel
+  workflow_dispatch:       # Déclenchement manuel
 
 jobs:
   run_script:
@@ -11,14 +9,17 @@ jobs:
 
     steps:
       - name: Référentiel d’extraction
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Vérifier la localisation du serveur github
         run: |
           github_geo=$(curl https://geo-info.ftven.fr/ws/edgescape.json)
           github_ip=$(curl https://api.ipify.org)
-          echo "$(date --utc +%FT%T%Z) La géolocalisation de github est: $github_geo" >> githubip.data
-          echo "$(date --utc +%FT%T%Z) L'adresse IP de github est: $github_ip" >> githubip.data
+          {
+          echo "$(date --utc +%FT%T%Z) La géolocalisation de github est: $github_geo"
+          echo "$(date --utc +%FT%T%Z) L'adresse IP de github est: $github_ip"
+          } > githubip.data  # > écrase l'ancien contenu
+          # >> pour ajouter dans le fichier sans effacer l'ancien contenu.
 
 
 
