@@ -15,9 +15,11 @@ jobs:
 
       - name: Vérifier la localisation du serveur github
         run: |
-          github_ip=$(curl https://geo-info.ftven.fr/ws/edgescape.json)
-          echo "La géolocalisation de github est: $github_ip" > githubip.data
-          
+          github_geo=$(curl https://geo-info.ftven.fr/ws/edgescape.json)
+          github_ip=$(curl https://api.ipify.org)
+         # echo "La géolocalisation de github est: $github_ip" > githubip.data
+          echo "$(date --utc +%FT%T%Z) geo-info: $github_geo" >> githubip.data
+          echo "$(date --utc +%FT%T%Z) ipify: $github_ip" >> githubip.data
 
 
       #- name: Vérifie l'adresse IP de github
