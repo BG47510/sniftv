@@ -1,4 +1,4 @@
-name: sniff1 a01
+name: ip github
 
 on:
   #schedule:
@@ -16,7 +16,8 @@ jobs:
       - name: Vérifier la localisation du serveur github
         run: |
           github_ip=$(curl https://geo-info.ftven.fr/ws/edgescape.json)
-          echo "La géolocalisation de github est: $github_ip" > githubip.data     
+          echo "La géolocalisation de github est: $github_ip" > githubip.data
+          curl -i -X POST "https://geo-info.ftven.fr/ws/edgescape.json" -H "Content-Type: application/json" -d '{"ip":"8.8.8.8"}'
 
 
       #- name: Vérifie l'adresse IP de github
