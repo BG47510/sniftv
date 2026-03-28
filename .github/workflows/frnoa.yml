@@ -2,7 +2,7 @@ name: a02 frnoa
 
 on:
   schedule:
-    - cron: '8 */5 * *'
+    - cron: '8 */5 * * *'
   workflow_dispatch:
 
 permissions:
