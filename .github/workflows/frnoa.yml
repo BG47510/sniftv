@@ -29,4 +29,5 @@ jobs:
 
     - name: Gestion des modifications apportées
       run: |
-        git commit -a -m “Actualisation du token dans le frnoa.m3u8”  # Enregistre les modifications apportées à un ou plusieurs fichiers de votre branche.
+        git add a02/frnoa.m3u8 a02/bak/frnoa.bak
+        git commit -m "Actualisation du token dans le frnoa.m3u8 et bak" || echo "Rien à committer" git push
