@@ -29,5 +29,7 @@ jobs:
 
     - name: Gestion des modifications apportées
       run: |
+        git config user.name "BG47510"
         git add a02/frnoa.m3u8 a02/bak/frnoa.bak
-        git commit -m "Actualisation du token dans le frnoa.m3u8 et bak" || echo "Rien à committer" git push
+        git commit -m "Actualisation du token dans le frnoa.m3u8 et bak" || echo "Rien à committer"
+        git push
