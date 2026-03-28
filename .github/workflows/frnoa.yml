@@ -2,7 +2,7 @@ name: a02 frnoa
 
 on:
   schedule:
-    - cron: '8 */5 * * *'  # S'exécute toutes les 5 heures
+    - cron: '* */5 * * *'  # S'exécute toutes les 5 heures
   workflow_dispatch:  # Permet de lancer le script manuellement depuis l'onglet Actions
 
 jobs:
