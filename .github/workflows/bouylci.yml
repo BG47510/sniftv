@@ -32,6 +32,6 @@ jobs:
         git config user.name "BG47510"
         # Utilisez l'adresse e-mail de non-réponse de GitHub pour préserver votre confidentialité.
         git config --global user.email "username@users.noreply.github.com"
-        git add a01/fr4.m3u8
-        git commit -m "Actualisation du token dans le fr4.m3u8 et bak" || echo "Rien à committer"
+        git add a01/bouylci.m3u8
+        git commit -m "Actualisation du token dans le bouylci.m3u8" || echo "Rien à committer"
         git push
