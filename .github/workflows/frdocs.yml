@@ -2,7 +2,7 @@ name: a02 frdocs
 
 on:
   schedule:
-    - cron: '0 1/4 * * *'  # S'exécute toutes les 4 heures à partir de 1 heure.
+    - cron: '20 1/4 * * *'  # S'exécute toutes les 4 heures à partir de 1 heure.
   workflow_dispatch:  # Permet de lancer le script manuellement depuis l'onglet Actions
 
 jobs:
@@ -32,6 +32,6 @@ jobs:
         git config user.name "BG47510"
         # Utilisez l'adresse e-mail de non-réponse de GitHub pour préserver votre confidentialité.
         git config --global user.email "username@users.noreply.github.com"
-        git add a02/frdics.m3u8 a02/bak/frdocs.bak
+        git add a02/frdocs.m3u8 a02/bak/frdocs.bak
         git commit -m "Actualisation du token dans le frdocs.m3u8 et bak" || echo "Rien à committer"
         git push
