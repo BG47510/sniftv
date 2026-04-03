@@ -2,7 +2,7 @@ name: a02 fr2
 
 on:
   schedule:
-    - cron: '48 */5 * * *'  # S'exécute toutes les 5 heures
+    - cron: '48 1/4 * * *'  # S'exécute toutes les 5 heures
   workflow_dispatch:  # Permet de lancer le script manuellement depuis l'onglet Actions
 
 jobs:
@@ -27,7 +27,11 @@ jobs:
       run: |
         python ${GITHUB_WORKSPACE}/a02/fr2.py
 
-    - name: Git Auto Commit
-      uses: stefanzweifel/git-auto-commit-action@v5  # Valide et renvoie automatiquement tous les fichiers créés ou modifiés à votre dépôt.
-      with:
-        commit_message: 'Actualisation'  # Message de commit
+    - name: Gestion des modifications apportées
+      run: |
+        git config user.name "BG47510"
+        # Utilisez l'adresse e-mail de non-réponse de GitHub pour préserver votre confidentialité.
+        git config --global user.email "username@users.noreply.github.com"
+        git add a02/fr2.m3u8 a02/bak/fr2.bak
+        git commit -m "Actualisation du token dans le fr2.m3u8 et bak" || echo "Rien à committer"
+        git push
