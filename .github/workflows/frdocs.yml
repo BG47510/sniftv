@@ -2,36 +2,66 @@ name: a02 frdocs
 
 on:
   schedule:
-    - cron: '20 1/4 * * *'  # S'exécute toutes les 4 heures à partir de 1 heure.
-  workflow_dispatch:  # Permet de lancer le script manuellement depuis l'onglet Actions
+    - cron: '20 1/4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Utilisation d'une image Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
     - name: Vérifier le code source
       uses: actions/checkout@v5
+      with:
+        fetch-depth: 0
 
     - name: Configurer Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'  # Version de Python à utiliser
+        python-version: '3.10'
 
     - name: Installer les dépendances
       run: |
-        pip install requests  # Installer requests
-        # Ajouter d'autres dépendances si nécessaire
+        python -m pip install --upgrade pip
+        pip install requests
 
-    - name: Exécuter le script
+    - name: Exécuter le script frdocs
       run: |
-        python ${GITHUB_WORKSPACE}/a02/frdocs.py
+        python "${{ github.workspace }}/a02/frdocs.py"
 
-    - name: Gestion des modifications apportées
+    - name: Configurer Git (user)
       run: |
         git config user.name "BG47510"
-        # Utilisez l'adresse e-mail de non-réponse de GitHub pour préserver votre confidentialité.
-        git config --global user.email "username@users.noreply.github.com"
-        git add a02/frdocs.m3u8 a02/bak/frdocs.bak
+        git config user.email "username@users.noreply.github.com"
+
+    - name: Ajouter et committer les changements
+      run: |
+        git add a02/frdocs.m3u8 a02/bak/frdocs.bak || true
         git commit -m "Actualisation du token dans le frdocs.m3u8 et bak" || echo "Rien à committer"
-        git push
+
+    - name: Préparer remote auth avec GITHUB_TOKEN
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Remplace l'URL remote par une URL authentifiée utilisant le token temporaire
+        git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+
+    - name: Récupérer la branche distante et merger
+      run: |
+        # Récupérer la branche main distante (profondeur 1 pour rapidité)
+        git fetch origin main --depth=1 || true
+        # Tenter un merge automatique des commits distants
+        git merge --no-edit origin/main || echo "Merge automatique impossible (conflits potentiels)."
+
+    - name: Push des modifications sur main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Push normal
+        git push origin HEAD:main
+
+        # Si vous préférez forcer et écraser la branche distante (DANGER), décommentez la ligne suivante à la place :
+        # git push --force origin HEAD:main
