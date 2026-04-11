@@ -42,26 +42,36 @@ jobs:
         git add a02/frdocs.m3u8 a02/bak/frdocs.bak || true
         git commit -m "Actualisation du token dans le frdocs.m3u8 et bak" || echo "Rien à committer"
 
-    - name: Préparer remote auth avec GITHUB_TOKEN
+    - name: Rebase local commits sur origin/main et pousser via branche temporaire
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # Remplace l'URL remote par une URL authentifiée utilisant le token temporaire
+        set -e
+        # Authentifier remote avec le token temporaire
         git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
 
-    - name: Récupérer la branche distante et merger
-      run: |
-        # Récupérer la branche main distante (profondeur 1 pour rapidité)
-        git fetch origin main --depth=1 || true
-        # Tenter un merge automatique des commits distants
-        git merge --no-edit origin/main || echo "Merge automatique impossible (conflits potentiels)."
+        # Récupérer origin/main
+        git fetch origin main --depth=1
 
-    - name: Push des modifications sur main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        # Push normal
-        git push origin HEAD:main
+        # Si on est déjà à jour et aucun commit local, on push directement
+        if git rev-parse --verify origin/main >/dev/null 2>&1; then
+          :
+        fi
 
-        # Si vous préférez forcer et écraser la branche distante (DANGER), décommentez la ligne suivante à la place :
-        # git push --force origin HEAD:main
+        # Créer une branche temporaire depuis HEAD
+        git checkout -b tmp-action
+
+        # Rebaser les commits locaux (s'il y en a) sur origin/main
+        # Si rebase échoue (conflits), la commande échouera et la job s'arrêtera sans push
+        git rebase origin/main
+
+        # Si rebase réussi, pousser tmp-action vers main
+        git push origin tmp-action:main
+
+    # Option alternative risquée (forcer le push) — laisser commentée
+    # - name: Push forcé (DANGER)
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   run: |
+    #     git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+    #     git push --force origin HEAD:main
