@@ -1,8 +1,8 @@
 name: a02 frdocs
 
 on:
-  schedule:
-    - cron: '20 1/4 * * *'
+  #schedule:
+   # - cron: '20 1/4 * * *'
   workflow_dispatch:
 
 permissions:
