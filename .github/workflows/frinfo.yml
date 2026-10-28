@@ -2,7 +2,7 @@ name: a02 frinfo
 
 on:
   schedule:
-    - cron: '0 18 * * *'  # S'exécute tous les jours à 18 heures
+    - cron: '0 14 * * *'  # S'exécute tous les jours à 18 heures
   workflow_dispatch:  # Permet de lancer le script manuellement depuis l'onglet Actions
 
 jobs:
